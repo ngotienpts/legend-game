@@ -1,3 +1,4 @@
 import Welcome from './welcome/Welcome';
+import Champion from './champion/Champion';
 
-export { Welcome };
+export { Welcome, Champion };

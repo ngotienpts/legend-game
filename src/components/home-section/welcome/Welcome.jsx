@@ -33,16 +33,16 @@ const Welcome = (props) => {
         const autoImageSlide = () => {
             let prevItem = currItem;
             currItem = (currItem + 1) % animates.length;
-
-            if (!document.hidden) {
-                animates[prevItem].next();
+            if (animates[prevItem] !== undefined) {
+                if (!document.hidden) {
+                    animates[prevItem].next();
+                }
+                setTimeout(() => {
+                    let canvas = document.querySelectorAll('#welcome__img__slide > canvas');
+                    document.querySelector('#welcome__img__slide').appendChild(canvas[0]);
+                    animates[prevItem].previous();
+                }, 3000);
             }
-
-            setTimeout(() => {
-                let canvas = document.querySelectorAll('#welcome__img__slide > canvas');
-                document.querySelector('#welcome__img__slide').appendChild(canvas[0]);
-                animates[prevItem].previous();
-            }, 3000);
         };
 
         setInterval(autoImageSlide, 3000);
