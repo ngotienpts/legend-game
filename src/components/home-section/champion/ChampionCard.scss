@@ -4,7 +4,7 @@
 .champion-card {
     $width: 450px;
     width: $width;
-    height: #{math.div($width * 9, 16)}px;
+    // height: #{math.div($width * 9, 16)}px;
     position: relative;
     pointer-events: none;
 
@@ -58,6 +58,7 @@
             inset: 4px;
             &::before {
                 background-color: rgba($color: #000000, $alpha: 0);
+                transition: 0.3s ease;
             }
         }
 
